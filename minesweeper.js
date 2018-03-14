@@ -56,7 +56,7 @@ document.addEventListener('contextmenu', checkForWin)
 // 1. Are all of the cells that are NOT mines visible?
 // 2. Are all of the mines marked?
 function checkForWin () {
-  for(let i = 0; i <= board.cells.length; i++) {
+  for(let i = 0; i < board.cells.length; i++) {
     let check = board.cells[i];
     if (check.isMine && !check.isMark) {
       return;
@@ -82,7 +82,7 @@ function countSurroundingMines (cell) {
   var surrounding = lib.getSurroundingCells(cell.row, cell.col);
   var count = 0;
   for(let i = 0; i < surrounding.length; i++){
-    if (surrounding[i].isMine === true);{
+    if (surrounding[i].isMine === true){
       count++
     } 
   }
