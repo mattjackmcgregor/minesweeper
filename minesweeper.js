@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', startGame)
       row: 0,
       col: 0,
       isMine: false,
-      isMark: false,
+      isMarked: false,
       hidden: true, 
       
     }, 
@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', startGame)
       row: 0,
       col: 1,
       isMine: true,
-      isMark: false,
+      isMarked: false,
       hidden: true,
       
     },
@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', startGame)
       row: 1,
       col: 0,
       isMine: false,
-      isMark: false,
+      isMarked: false,
       hidden: true,
       
     },
@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', startGame)
       row: 1,
       col: 1,
       isMine: true,
-      isMark: false,
+      isMarked: false,
       hidden: true,
      
       
@@ -58,7 +58,7 @@ document.addEventListener('contextmenu', checkForWin)
 function checkForWin () {
   for(let i = 0; i < board.cells.length; i++) {
     let check = board.cells[i];
-    if (check.isMine && !check.isMark) {
+    if (check.isMine && !check.isMarked) {
       return;
     } else if (!check.isMine && check.hidden) {
       return;
